@@ -1,0 +1,22 @@
+{
+  "name": "readme-generator",
+  "version": "1.0.0",
+  "description": "write it here moron",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pungry/Readme-Generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pungry/Readme-Generator/issues"
+  },
+  "homepage": "https://github.com/Pungry/Readme-Generator#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3"
+  }
+}
