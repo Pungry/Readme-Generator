@@ -1,50 +1,5 @@
-//importing both inquirer and fs here
-var inquirer = require("inquirer");
-var fs = require("fs");
-
-// const questions = 
-//using inquirer to ask user questions about their readme
-inquirer.prompt([
-    {
-        type: "input",
-        message: "What is the title of your project?",
-        name: "title"
-    },
-    {
-        type: "input",
-        message: "Please give a brief description of your project.",
-        name: "description"
-    },
-    {
-        type: "input",
-        message: "What other libraries or pieces of software are necessary for your user to download before using your project?",
-        name: "installation"
-    },
-    {
-        type: "input",
-        message: "How does one use your project? Such as 'npm install projectName', or 'import projectName' depending on the environment it is used in.",
-        name: "usage"
-    },
-    {
-        type: "checkbox",
-        choices:["MIT", "Unlicense", "Apache", "Mozilla"],
-        message: "Which license is your project under?",
-        name: "license"
-    },
-    {
-        type: "input",
-        message: "Write the lines of code needed for a basic user to quickly test your code. If it is an npm package, type 'npm run test'.",
-        name: "tests"
-    },
-    {
-        type: "input",
-        message: "What is your email address?",
-        name: "email"
-    }
-    //put table of contents in the readme template
-]).then(function(response){
-    fs.writeFile("RedMe.md", `#Title
-    ${response.title}
+#Title
+    ReadMe Generator
     
     #Table of Contents
     Description
@@ -56,16 +11,16 @@ inquirer.prompt([
     License
     
     #Description
-    ${response.description}
+    This is a nifty tool that creates a ReadMe.md file based on user input.
     
     #Installation
-    This project requires ${response.installation} to be installed before using.
+    This project requires Inquirer. to be installed before using.
     
     #Usage
-    ${response.usage}
+    npm install readme-generator
     
     #License
-    This project uses the ${response.license}.
+    This project uses the MIT.
     
     #Contributing
     When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
@@ -107,7 +62,7 @@ inquirer.prompt([
     This Code of Conduct applies both within project spaces and in public spaces when an individual is representing the project or its community. Examples of representing a project or community include using an official project e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event. Representation of a project may be further defined and clarified by project maintainers.
     
     ##Enforcement
-    Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team at ${response.email}. All complaints will be reviewed and investigated and will result in a response that is deemed necessary and appropriate to the circumstances. The project team is obligated to maintain confidentiality with regard to the reporter of an incident. Further details of specific enforcement policies may be posted separately.
+    Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team at henryquintturner@gmail.com. All complaints will be reviewed and investigated and will result in a response that is deemed necessary and appropriate to the circumstances. The project team is obligated to maintain confidentiality with regard to the reporter of an incident. Further details of specific enforcement policies may be posted separately.
     
     Project maintainers who do not follow or enforce the Code of Conduct in good faith may face temporary or permanent repercussions as determined by other members of the project's leadership.
     
@@ -116,21 +71,7 @@ inquirer.prompt([
     
     #Tests
     In order to test the project, try these test inputs:
-    ${response.tests}
+    npm run test
     
     #Questions
-    Direct all questions about this project to ${response.email}.`, function(err){
-        if (err) {
-            return console.log(err);
-        }
-    })
-})
-
-//generate a template, somehow; perhaps write a ReadMe in a markdown file first and copy it in
-
-//function that will put the user's answers into the template
-
-//use answers from inquirer, pass them into the generate readme function
-
-//write file using template generated from readme function
-// questions.then(fs.writeFile("redme.md", ))
+    Direct all questions about this project to henryquintturner@gmail.com.
